@@ -304,3 +304,39 @@ function findFirstLastDigit()
 
    document.getElementById("result").innerHTML="The first digit is "+FirstDigit+"and Last digit is"+lastDigit;      
  }
+function printTable()
+ {
+   let num1=parseInt(document.getElementById("n1").value);
+   for(let i=1;i<=10;i++)
+    {
+      document.write(num1+" * "+i+"="+(num1*i)+"<br>");
+    }
+ }
+
+function PrintNatural()
+ {
+   let num1=parseInt(document.getElementById("n1").value);
+   let n=1;
+   while(n<=num1)
+    {
+        document.write(n+"<br>")
+     n++;
+    }
+ }
+
+function PrintNaturalrev()
+ {
+   let num1=parseInt(document.getElementById("n1").value);
+   
+   while(num1>=1)
+    {
+        document.write(num1+"<br>")
+     num1--;
+    }
+ }
+
+function PrintNumberDivisibleBy5&11()
+ {
+   let num1=parseInt(document.getElementById("n1").value);
+   for(i)
+ }
