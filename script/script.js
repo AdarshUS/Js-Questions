@@ -1,3 +1,4 @@
+
 function Add()
  {
    let num1=Number(document.getElementById("n1").value);
@@ -158,6 +159,148 @@ function findSumOfDigits()
 
 function reverseNumber()
  {
+  let reversedNumber = 0;
   let num1=parseInt(document.getElementById("n1").value);
-  
+  while(num1>0)
+   {
+     let lastDigit = num1%10;
+     reversedNumber = reversedNumber * 10 + lastDigit;
+     num1= Math.floor(num1/10);
+   }
+   document.getElementById("result").innerHTML="The Reverse of the number is " +reversedNumber;
+ }
+
+function FindLargestSmallest()
+ {
+   let num1=parseInt(document.getElementById("n1").value);
+   let num2=parseInt(document.getElementById("n2").value);
+   let num3=parseInt(document.getElementById("n3").value);
+
+   let largest=(num1>num2)?((num1>num3)?num1:num3):((num2>num3)?num2:num3);
+   let smallest=(num1<num2)?((num1<num3)?num1:num3):((num2<num3)?num2:num3);
+   document.getElementById("result").innerHTML="The largest is"+largest+"and smallest is"+smallest;
+ }
+function isPrime()
+{
+  let prime=true;
+  let num1=parseInt(document.getElementById("n1").value);
+  for(let i=2;i<=Math.sqrt(num1);i++)
+    {  
+      if(num1%i==0)
+       {        
+        prime = false;
+        break;
+       }
+    }
+    if(prime)
+     {
+       document.getElementById("result").innerHTML="The number is prime";
+     }
+     else
+     {
+       document.getElementById("result").innerHTML="The number is not prime";
+     }    
+}
+function isEligible()
+ {
+   let maths=parseInt(document.getElementById("m1").value);
+   let chemistry=parseInt(document.getElementById("m2").value);
+   let physics=parseInt(document.getElementById("m3").value);
+                                                   
+   let total =maths+chemistry+physics;
+   let mathsPhysicsTotal=maths+physics;
+   if(maths>=65 && physics>=55 && chemistry>=50 && (total>=190 || mathsPhysicsTotal>=140))
+     {
+       document.getElementById("result").style.color="green";
+       document.getElementById("result").innerHTML="You are Eligible";      
+     }
+    else
+     {
+       document.getElementById("result").style.color="red";
+       document.getElementById("result").innerHTML="You are Not Eligible";      
+     }
+ }
+
+function checkDayinWeek()
+ {
+    let num1=parseInt(document.getElementById("n1").value);
+    switch(num1)
+     {
+       case 1:
+       document.getElementById("result").innerHTML="Sunday";
+       break;
+        case 2:
+       document.getElementById("result").innerHTML="Monday";
+       break;
+        case 3:
+       document.getElementById("result").innerHTML="Tuesday";
+       break;
+        case 4:
+       document.getElementById("result").innerHTML="Wednesday";
+       break;
+        case 5:
+       document.getElementById("result").innerHTML="Thursday";
+       break;
+        case 6:
+       document.getElementById("result").innerHTML="Friday";
+       break;
+        case 7:
+       document.getElementById("result").innerHTML="Saturday";
+       break;
+     }
+ }
+
+function print(number)
+ {
+    if(number>100)
+     {
+       return;
+     }
+    document.write(number+"<br>");
+   print(number+1);
+ }
+
+function printUsingLoop()
+ {
+    for(let i=0;i<100;i++)
+     {
+       document.write(i+1+"<br>")
+     }
+ }
+
+function FindFactors()
+ {    
+ 
+  let num1=parseInt(document.getElementById("n1").value);
+  for(let i=2;i<=num1;i++)
+   {
+     if(num1%i==0)
+     {
+      document.write(i+"<br>")
+     }
+   }
+ }
+
+function findFactorial()
+ {
+    let factorial=1;
+    let num1=parseInt(document.getElementById("n1").value);
+    for(let i=2;i<=num1;i++)
+     {
+       factorial=factorial*i;
+     }
+    document.getElementById("result").innerHTML="Factorial is"+factorial;      
+ }
+
+function findFirstLastDigit()
+ {
+    let num1=parseInt(document.getElementById("n1").value);
+    let lastDigit= num1%10;
+    while(num1>9)
+    {
+      num1=Math.floor(num1/10);
+    }
+   let FirstDigit = num1;
+
+   document.getElementById("result").innerHTML="The first digit is "+FirstDigit+"and Last digit is"+lastDigit;      
  }
