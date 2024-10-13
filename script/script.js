@@ -335,8 +335,46 @@ function PrintNaturalrev()
     }
  }
 
-function PrintNumberDivisibleBy5&11()
+function PrintNumberDivisibleBy11()
  {
    let num1=parseInt(document.getElementById("n1").value);
-   for(i)
+   for(let i=55;i<=num1;i++)
+     {
+       if(i%5==0 && i%11==0)
+         {
+           document.getElementById("result").innerHTML+=i+"<br>"
+         }
+     }
+ }
+
+function printoddNumbers()
+ {
+      let num1=parseInt(document.getElementById("n1").value);
+       
+      for(let i=0;i<=num1;i++)
+        {
+console.log("inside loop")
+
+          if(i%2!=0)
+            {
+             console.log("inside condition")
+             document.getElementById("result").innerHTML+=i+"<br>"
+
+            }
+        }
+
+ }
+
+function findproductOfDigits()
+ {
+    let num1=parseInt(document.getElementById("n1").value);
+    let product=1;
+    while(num1>0)
+     {
+        let lastDigit=num1%10;
+        product*=lastDigit;
+        num1=Math.floor(num1/10);
+     }
+    document.getElementById("result").innerHTML=product
+
  }
