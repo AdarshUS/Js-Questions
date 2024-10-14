@@ -378,3 +378,379 @@ function findproductOfDigits()
     document.getElementById("result").innerHTML=product
 
  }
+function checkPalindrome()
+  {
+   let text=document.getElementById("n1").value;  //text = "malayalam"
+   let rev=""; 
+   for(let i=text.length-1;i>=0;i--)
+     {
+       rev+=text.charAt(i);
+     }
+   if(rev==text)
+    {
+      document.getElementById("result").innerHTML="The string is palindrome"
+    }
+   else
+   {
+      document.getElementById("result").innerHTML="The string is not palindrome"
+   }
+ }
+
+function isPerfectNumber()
+  {
+   let num1=parseInt(document.getElementById("n1").value);
+   let sum=1;
+   for(let i=2;i<num1;i++)
+     {
+       if(num1%i==0)
+         {
+           sum+=i;
+         }
+     }
+if(sum==num1)
+{
+  document.getElementById("result").innerHTML="The Number is perfect Number"
+}
+ else
+{
+   document.getElementById("result").innerHTML="The Number is not perfect Number"
+}
+  }
+
+function checkSign()
+ {
+   let num1=parseInt(document.getElementById("n1").value);
+   if(num1>0)
+    {
+      document.getElementById("result").innerHTML="The Number is a Positive Number";
+    }
+   else
+    {
+     document.getElementById("result").innerHTML="The Number is a Negative  Number";
+    }
+ }
+
+function checkNotes()
+ {
+  const notes = [500,200,100,50,20,10,5];
+  
+  
+  let num1=parseInt(document.getElementById("n1").value); //5555
+  for(let i=0;i<notes.length;i++)
+   {  
+     if(num1/notes[i]>0)
+       {
+            document.getElementById("result").innerHTML+=notes[i]+"="+Math.floor(num1/notes[i])+"notes <br>";
+            num1=num1%notes[i];
+       }
+   }
+ }
+
+function printEven()
+  {
+     let num1=parseInt(document.getElementById("n1").value);
+     for(i=2;i<=num1;i++)
+      {
+        if(i%2==0)
+         {
+           document.getElementById("result").innerHTML+=i+"<br>"
+         }
+      }
+  }
+  function findSumAndAverage()
+   {
+     let num1=parseInt(document.getElementById("n1").value);
+     let sum=(num1*(num1+1))/2;
+     let avg = sum/num1;
+    document.getElementById("result").innerHTML="Sum is "+sum+"and Average is"+avg;
+   }
+
+ function SumOfEven()
+  {
+     let num1=parseInt(document.getElementById("n1").value);
+     let sum=0; 
+     for(i=2;i<=num1;i++)
+      {
+         if(i%2==0)
+         {
+          sum+=i;
+         }
+      }
+     document.getElementById("result").innerHTML="Sum of even number is "+sum;
+  }
+
+function SumOfOddAndEven()
+ {
+   let num1=parseInt(document.getElementById("n1").value);
+   let sumOfOdd=0;
+   let sumOfEven=0;
+    for(i=1;i<=num1;i++)
+      {
+         if(i%2==0)
+         {
+          sumOfEven+=i;
+         }
+         else
+          {
+           sumOfOdd+=i;
+          }
+      }
+    document.getElementById("result").innerHTML="Sum of Odd Numbers is "+sumOfOdd+"and Sum of even Numbers is "+sumOfEven;
+}
+ function findBillAmount()
+  {
+    let units=parseInt(document.getElementById("n1").value);
+    let amount=0;
+    if(units<=50)
+     {
+       amount+=2.60;
+     }
+     if(units<=100)
+     {
+       amount+=2.60;
+       amount+=3.25;
+     }
+     if(units<=200)
+      {
+       amount+=2.60;
+       amount+=3.25;
+       amount+=5.65;
+      }
+     if(units>200)
+      {
+       amount+=2.60;
+       amount+=3.25;
+       amount+=5.65;
+       amount+=7.25;
+      }
+      if(units>700)
+       {
+         amount+=2.60;
+         amount+=3.25;
+         amount+=5.65;
+         amount+=7.25;
+         amount+=(0.25/100)*amount;
+       }
+    document.getElementById("result").innerHTML="The Amount of Electricity Bill is "+amount;
+  }
+
+function calculateSalary()
+ {
+     let basic_salary=parseInt(document.getElementById("n1").value);
+     let hra;
+     let da;
+     if(basic_salary<=10000)
+       {
+        hra= (8/100)*basic_salary;
+        da = (10/100)*basic_salary;
+       }
+     else if(basic_salary<=20000)
+      {
+        hra= (16/100)*basic_salary;
+        da = (20/100)*basic_salary;
+      }
+     else if(basic_salary>20000)
+      {
+         hra= (24/100)*basic_salary;
+        da = (30/100)*basic_salary;
+      }
+   let grossSalary=basic_salary+hra+da;
+     document.getElementById("result").innerHTML="The Gross salary is"+grossSalary;
+ }
+
+function findSurfaceAreaVolume()
+{
+  let length=parseInt(document.getElementById("n1").value);
+  let radius=parseInt(document.getElementById("r1").value);
+  let surfacearea=(Math.PI*radius*length)+(Math.PI*radius*radius);
+  let volume = (1/3)*Math.PI*radius*radius*length;
+
+ document.getElementById("result").innerHTML="The surface area is "+surfacearea+"and volume is "+volume;
+}
+
+function findSurfaceAreaVolumeCube()
+{
+  let length = parseInt(document.getElementById("n1").value);
+  let surfacearea = 6*length*length;
+  let volume = length *length*length;
+  let lsa = 4*length*length;
+
+ document.getElementById("result").innerHTML="The surfacearea is:"+surfacearea+"<br> The lateral surface area is "+lsa+"<br> volume is"+volume
+}
+
+function findSurfaceAreaVolumeCuboid()
+ {
+   let length=parseInt(document.getElementById("n1").value);
+   let breadth=parseInt(document.getElementById("b1").value);
+   let height=parseInt(document.getElementById("h1").value);
+
+   let tsa= (2*length*breadth)+(2*length*height)+(2*breadth*height);
+   let volume = length*breadth*height;
+   let lsa = 2*height*(length+breadth);
+
+ document.getElementById("result").innerHTML="The surfacearea is:"+tsa+"<br> The lateral surface area is "+lsa+"<br> volume is"+volume
+ }
+
+function findSurfaceAreaVolumeCylinder()
+ {
+   let height=parseInt(document.getElementById("h1").value);
+   let radius=parseInt(document.getElementById("r1").value);
+
+   let tsa = (2*Math.PI*radius*radius)+(2*Math.PI*radius*height);
+   let volume = Math.PI*radius*radius*height;
+   let lsa= 2*Math.PI*radius*height;  
+  
+   document.getElementById("result").innerHTML="The surfacearea is:"+tsa+"<br> The lateral surface area is "+lsa+"<br> volume is"+volume
+ }
+
+function findSurfaceAreaVolumeSphere()
+ {
+  let r=parseInt(document.getElementById("r1").value);
+   let tsa = 4*3.14*r*r;
+   let volume = 4*3.14*r*r*r;
+
+  document.getElementById("result").innerHTML="The surfacearea is:"+tsa+"<br>volume is"+volume
+ }
+
+function countDigits()
+ {
+  let num=parseInt(document.getElementById("n1").value);
+  let length = num.toString().length
+
+  document.getElementById("result").innerHTML="Number of digits is"+length;
+ }
+
+function printFibinocci()
+ {
+  let num=parseInt(document.getElementById("n1").value);
+  first=0;
+  second=1;
+  
+  if(num==1)
+   {
+     document.getElementById("result").innerHTML=first;
+     return;
+   }
+      document.getElementById("result").innerHTML=first+" "+second;
+     for(i=3;i<=num;i++)
+      {
+        let sum = first+second;
+         document.getElementById("result").innerHTML+=" "+sum
+        first=second;
+         second= sum;
+      }   
+ }
+
+function isPalindromeNumber()
+ {
+    let num=parseInt(document.getElementById("n1").value);
+    let reverseNumber=0;
+    let temp=num;
+    while(num>0)
+     {
+      let lastDigit= num%10;
+      reverseNumber=reverseNumber*10+lastDigit;
+      num=Math.floor(num/10);
+     }
+    if(reverseNumber==temp)
+     {
+       document.getElementById("result").innerHTML="The Number is Palindrome"
+     }
+    else
+    {
+      document.getElementById("result").innerHTML="The Number is not Palindrome"
+    }
+ }
+
+function concatenateStrings()
+ {
+   let string1=document.getElementById("s1").value;
+   let string2=document.getElementById("s2").value;
+   result = string1 + string2;
+
+   document.getElementById("result").innerHTML="The concatenated string is "+result;
+ }
+
+ function printAscii()
+  {
+    var character=document.getElementById("s1").value;
+    let ascii= character.charCodeAt(0);
+
+   document.getElementById("result").innerHTML="The ascii value is"+ascii;
+  }
+
+ function concatenateStringsfn()
+  {
+    let string1=document.getElementById("s1").value;
+    let string2=document.getElementById("s2").value;
+    result = string1.concat(string2);
+
+   document.getElementById("result").innerHTML="The concatenated string is "+result;
+  }
+
+ function printFirstChar()
+  {
+    let string = document.getElementById("s1").value;
+    let firstChar = string.charAt(0);
+
+   document.getElementById("result").innerHTML="The first character is  "+firstChar;
+  }
+
+  function printLastChar()
+   {
+     let string = document.getElementById("s1").value;
+     let lastChar = string.charAt(string.length-1);
+
+     document.getElementById("result").innerHTML="The Last character is  "+lastChar;
+   }
+
+  function printMiddleChar()
+   {
+     let string = document.getElementById("s1").value;
+      if(string.length%2==0)
+        {
+           document.getElementById("result").innerHTML="No Middle character";
+        }
+       else{
+          let middlechar= string.charAt(Math.floor(string.length/2))
+          document.getElementById("result").innerHTML="Middle character is "+middlechar;
+        }
+   }
+
+ function printcharInString()
+  {
+    let string = document.getElementById("t1").value;
+
+    for(i=0;i<string.length;i++)
+      {
+        document.getElementById("result").innerHTML+=string.charAt(i)+"<br>";
+      }
+  }
+
+ function printStringLength()
+  {
+    let string = document.getElementById("t1").value;
+    stringlenusingfn=string.length;
+    count=0;
+    Array.from(string).forEach(char=>count++)
+   
+    document.getElementById("result").innerHTML="length without using fn "+count+"<br>";
+    document.getElementById("result").innerHTML+="length using fn "+stringlenusingfn;
+  }
+
+function printindexOfChar()
+ {
+    let string = document.getElementById("t1").value;
+    let ch= document.getElementById("ch").value;
+
+    let index= string.indexOf(ch);
+
+    document.getElementById("result").innerHTML="The index of the character is"+index;
+ }
+
+function searchChar()
+  {
+      let string = document.getElementById("t1").value;
+      let ch= document.getElementById("ch").value;
+      
+  }
