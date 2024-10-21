@@ -753,4 +753,52 @@ function searchChar()
       let string = document.getElementById("t1").value;
       let ch= document.getElementById("ch").value;
       
+      if(string.indexOf(ch)>0)
+        {
+          document.getElementById("result").innerHTML="The character found"
+        }
+       else
+        {
+          document.getElementById("result").innerHTML="The character not found"
+        }
   }
+
+function checkPrefix()
+ {
+   let string = document.getElementById("n1").value;
+    let prefix = document.getElementById("p1").value;
+
+    if(string.startsWith(prefix))
+      {
+          document.getElementById("result").innerHTML="The prefix found";
+      }
+     else
+     {
+         document.getElementById("result").innerHTML="The prefix not found";
+     }
+ }
+
+function replace()
+ {
+   let string = document.getElementById("n1").value;
+    let oldstring = document.getElementById("p1").value;
+    let newString = document.getElementById("p2").value;
+    
+  document.getElementById("result").innerHTML= string.replace(oldstring,newString);
+
+ }
+
+function changecase()
+{
+  let string = document.getElementById("n1").value;
+  let newString = [...string].map(ch=>ch === ch.toLowerCase() ? ch.toUpperCase() : ch.toLowerCase()
+).join('');
+ document.getElementById("result").innerHTML= newString;
+}
+
+function reverseVowels()
+ {
+   let string = document.getElementById("n1").value;
+   
+
+ }
