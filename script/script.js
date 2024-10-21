@@ -862,3 +862,102 @@ function getCountOfVowels()
       }
     document.getElementById("result").innerHTML="The Number of Vowels is "+vowels+"<br> The Number of consonants is"+consonants;
  }
+
+function LargestWord()
+  {
+     let string = document.getElementById("t1").value;
+     const stringarr= string.split(" ");
+     let max=''
+     let min='laaaaaaaaaaaa';
+     stringarr.forEach(word=>{
+      if(word.length>max.length)
+       {
+         max=word;
+       }
+       if(word.length<min.length)
+       {
+         min=word;
+       }
+     });
+    
+      document.getElementById("result").innerHTML="The Largest word is "+max+"<br> The Smallest word is"+min;
+   }
+   
+function changeLetter()
+  {
+     let string = document.getElementById("t1").value;     
+     let stringarr= [...string];
+     let modifiedarr=stringarr.map(c=>String.fromCharCode(c.charCodeAt(0)+1));    
+    document.getElementById("result").innerHTML="The modified word is"+modifiedarr.join('');
+  }
+
+ function findMissingLetter()
+  {
+     let word = document.getElementById("t1").value;  //abcef
+     let currentchar=word.charCodeAt(0);
+     let missing=undefined;
+     for(let i=0;i<word.length;i++)
+      {
+        if ((word.charAt(i)).charCodeAt(0) === currentchar) {
+        currentchar++;
+      } else {
+        missing = String.fromCharCode(currentchar);
+      }
+      }
+       
+      if(missing.length()==0)
+       {
+         document.getElementById("result").innerHTML="There is no ,missing letter";
+       }
+       else
+       {
+          document.getElementById("result").innerHTML="Missing letter is "+missing;
+       }
+    }
+
+ function deleteConsonants()
+  {
+      let word = document.getElementById("n1").value;
+      let stringarr= [...word];
+      for(i=0;i<stringarr.length;i++)
+        {
+          if(/[^aeiou]/.test(stringarr[i]))
+            {
+               stringarr[i]="";
+            }
+        }
+      document.getElementById("result").innerHTML="The new word is "+stringarr.join('');
+  }
+  
+  function findFrequency()
+   {
+      let word = document.getElementById("n1").value;
+      let obj={};
+      let maxvalue='';
+      
+      
+      for(let ch of word)
+       { 
+         if(obj[ch]){
+           obj[ch]++;
+         } 
+         else
+         {
+          obj[ch]=1;
+         }
+       }
+        
+        document.getElementById("result").innerHTML=JSON.stringify(obj);
+        for(let key in obj)
+         {
+           if(obj.hasOwnProperty(key))
+            {             
+              if(obj[key]>maxvalue)
+                 {
+                    maxvalue=key;
+                    
+                 }
+            }
+         }
+       document.getElementById("maximumfrequency").innerHTML=maxvalue;
+   }
