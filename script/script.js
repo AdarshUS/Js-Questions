@@ -796,9 +796,69 @@ function changecase()
  document.getElementById("result").innerHTML= newString;
 }
 
-function reverseVowels()
+function reverseVowels()                 //adipurush  aiuu  uuia  udupirash
  {
    let string = document.getElementById("n1").value;
-   
+   let stringarr= [...string];
+   const vowelArray=[];
+   let k=0;
+   for(i=0;i<stringarr.length;i++)
 
+   {
+     if(string.charAt(i)=='a'||string.charAt(i)=='e'||string.charAt(i)=='i'||string.charAt(i)=='o'||string.charAt(i)=='u')
+      vowelArray.push(string.charAt(i));
+   }   
+   vowelArray.reverse();
+   for(i=0;i<stringarr.length;i++)
+    {
+      if(string.charAt(i)=='a'||string.charAt(i)=='e'||string.charAt(i)=='i'||string.charAt(i)=='o'||string.charAt(i)=='u')
+        {
+          stringarr[i]=vowelArray[k];
+          k++;
+        }
+    }
+    document.getElementById("result").innerHTML=stringarr.join('');
+ }
+
+function getCount()
+ {
+   let string = document.getElementById("t1").value;
+   let letterCount=0;
+   let numberCount=0;
+   let specialchar=0;
+   for(i=0;i<string.length;i++)
+    {
+      if(/[a-zA-z]/.test(string.charAt(i)))
+       {
+         letterCount++;
+       }
+      else if(/[0-9]/.test(string.charAt(i)))
+       {
+         numberCount++;
+       }
+     else if(/[-!$%^&*()_+|~=`{}\[\]:\/;<>?,.@#]/.test(string.charAt(i)))
+      {
+       specialchar++;
+      }
+    }
+   document.getElementById("result").innerHTML="The No of Letters is "+letterCount+"<br>The No of Digits is "+numberCount+"<br>The No of specialchar is "+specialchar
+ }
+
+function getCountOfVowels()
+ {
+    let string = document.getElementById("t1").value;
+    let vowels=0
+    let consonants=0; 
+    for(i=0;i<string.length;i++)
+      {
+        if(/[aeiou]/.test(string.charAt(i)))
+          {
+            vowels++;
+          }
+         else
+          {
+            consonants++;
+          }
+      }
+    document.getElementById("result").innerHTML="The Number of Vowels is "+vowels+"<br> The Number of consonants is"+consonants;
  }
